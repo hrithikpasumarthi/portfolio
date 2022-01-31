@@ -1,0 +1,79 @@
+
+<div id="mynavbar">
+    <div (click)='logout()'>
+        LOGOUT
+    </div>
+    <div [routerLink]='["/dashboardedit"]' >
+        EDIT    
+    </div>
+        </div> 
+<div id="mylayout">
+     
+    <div style="position: relative;">
+        <img src='' class="img-fluid" #image2 id="image2">
+        <img src='' class="img-fluid" #image1 id="image1">
+    </div>
+
+    <div id="content">
+        <div *ngIf="ok" id='abaccord'>
+            <p *ngFor="let skill of data.skills;let z=index;" style="cursor: pointer;" (click)="stararray[z]=!stararray[z]" class="accord" >
+              <span *ngIf="!stararray[z]" >{{skill}}</span>
+              <span *ngIf="stararray[z]" >
+                  <span *ngFor='let b of counter(this.data.skillmap[skill])' id='star'>
+                    <span *ngIf='b==1'>
+                        &#9733;
+                      </span>
+                      <span *ngIf='b==0'>
+                        &#9734;
+                      </span>
+                  </span>
+
+              </span>
+               
+            </p>   
+            
+        </div>
+        <div id='totalprojects'>
+            <div *ngIf="ok" id='project'>
+                <div *ngFor="let project of data.project.slice(start,end);let i=index" class='mycard'>
+                 <img src='../../assets/gitimage.png' class="cardimage">
+                 <p style="margin-top: 5px;" class='desc'><b>{{project.name|uppercase}}</b> 
+                 <span (click)='open(project.link)' style='font-size:2vw;color:blue;cursor:pointer'><u>&#8599;</u></span></p>
+                </div>
+             </div>
+
+             <div style="margin-top:-10%;;font-size: 5vw;" >
+                <span  (click)='prev()' style="cursor:pointer;margin-left:4%;color:#ccc;"><b>&#8592;</b></span>
+               <span (click)='next()' style="cursor:pointer;float: right;color:#ccc;margin-right: 4%;"><b>&#8594;</b></span>
+             </div>
+        </div>
+        
+        <div>
+
+        </div>
+    </div>
+     
+    <div class="down" *ngIf="ok">
+
+        <div class='down1'>
+            <h3 style='border-bottom:2px solid silver;'>PERSONAL TRAITS</h3>
+            <ul >
+                <li *ngFor='let trait of data.traits '>
+                    {{trait|titlecase}}
+                </li>
+            </ul>
+
+        </div>
+
+        <div class='down2'>
+            <h3 style='border-bottom:2px solid silver;'>HOBBIES</h3>
+            <ul >
+                <li *ngFor='let hobbie of data.hobbies '>
+                    {{hobbie|titlecase}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

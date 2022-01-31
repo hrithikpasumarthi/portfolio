@@ -1,0 +1,268 @@
+#mynavbar
+{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #ccc;
+}
+
+
+
+#mynavbar div
+{
+ padding: 15px;
+
+}
+ 
+#mynavbar div:hover
+{
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+#mylayout
+{
+    padding: 20px;
+    border-radius: 10px;
+    width:70%;
+    height:100%;
+    margin:auto;
+    border:1px solid black;
+    box-shadow: 0px 0px 5px 5px grey;
+
+}
+
+#image1
+{
+   position:absolute;
+   height:15vw;
+   width: 15vw;
+  bottom: 5px;
+  left:5px;
+   border-radius: 50%;
+}
+
+#image2
+{
+   
+    max-height:250px;
+    width:100%;
+}
+
+.accord{
+    text-align: center;
+    padding:5px;
+    border:1px solid #ccc;
+    background-color: #ccc;
+    margin-bottom: 1px;
+}
+#content
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    background-color:#383A3F;
+}
+.accord:hover
+{
+background-color: #aaa;
+}
+
+#abaccord
+{
+    width:20%;
+    height:100%;
+    margin-top:10px;
+    margin-left: 5px;
+    margin-bottom:5px;
+}
+
+#totalprojects
+{
+display:flex;
+flex-direction: column;
+/* background-image: linear-gradient(to  bottom,#3366cc, #ff99cc); */
+
+
+width:80%;
+
+}
+
+#project
+{
+   height:90%;
+    display:flex;
+    flex-direction: row;
+    /* margin-left: 25px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mycard
+{
+    width:17vw;
+    height:17vw;
+    padding:10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc{
+    display: none;
+}
+.mycard img{
+    height:70%;
+    width:70%;
+}
+.mycard:hover {
+    width:20vw;
+    height:15vw;
+    box-shadow: 0px 0px 5px 5px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1vw;
+    /* background-image: linear-gradient(to  top,#000066, #cc6699); */
+    background-color: #1F2124;
+    color: silver;
+}
+
+.mycard:hover > .desc{
+    display:block;
+}
+.mycard:hover > img{
+    height:55%;
+    width:55%;
+}
+
+.down
+{
+padding-top: 15px;
+display:flex;
+flex-direction:row;
+justify-content: space-evenly;
+background-color:#383A3F;
+padding-bottom: 10px;
+}
+ 
+.down1,.down2
+{
+    width:35%;   
+    border: 1px solid black;
+    background-color: #1F2124;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding:20px;
+    padding-right: 30px;
+    color:silver;
+    box-shadow: 0px 0px 5px 2px silver;
+
+}
+
+#star
+{
+    font-size: 1.5vw;
+}
+
+@media (max-width:950px)
+{
+    #content
+    {
+        flex-direction: column;
+    }
+    #totalprojects
+    {
+        width:100%;
+    }
+    #project
+    {
+        width:100%;
+        margin-left: 0px;
+    }
+    .mycard{
+        width:40%;
+        margin-left:0px;
+        font-size: 75%;
+    }
+    #abaccord
+    {
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .accord{
+        width:30%;
+        margin:2px;
+    }
+
+}
+@media (max-width:750px) {
+    #star
+    {
+        font-size: 2.5vw;
+    }
+}
+@media (max-width:700px)
+{
+    .down1,.down2
+    {
+        width:40%;
+    }
+}
+@media (max-width:590px)
+{
+    .down
+    {
+        flex-direction: column;
+    }
+    .down1
+    {
+        width:60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .down2
+    {
+        width:60%;
+        margin: auto;
+       
+    }
+}
+
+@media (max-width:350px)
+{
+    .down
+    {
+        flex-direction: column;
+    }
+    .down1
+    {
+        width:80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .down2
+    {
+        width:80%;
+        margin: auto;
+       
+    }
+}
+
+@media (max-width:400px)
+{
+    #abaccord
+    {
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .accord{
+        width:47%;
+        margin:2px;
+    }
+}

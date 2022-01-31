@@ -1,0 +1,93 @@
+@keyframes modalslide {
+    from {top:-100px;}
+    to{top:50%;}
+}
+#back-img
+{
+    background-image:url('../../assets/4.png') ;
+    position: absolute;
+    height:100vh;
+    width:100vw;
+    opacity:0.5;
+    z-index: -1;
+}
+label
+{
+    font-size: 20px;
+}
+.mylayout
+{
+    height:100vh;
+}
+.header
+{
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    background-color: #bbb;
+    height:25px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+}
+.close
+{
+    font: 30;
+    font-weight: bold ;
+    float: right;
+    margin:2px;
+    cursor: pointer;   
+}
+#myoutmodal
+{ 
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    animation-name: modalslide;
+    animation-duration: 1s;
+    width:26%;
+}
+
+.mymodal
+{
+   margin:10px;
+   line-height: 1.6em;
+   width:90%;
+}
+
+/* .myfooter
+{
+    background-color: #bbb;
+    border:1px solid #ddd;
+    border-radius: 5px;
+} */
+@media (max-width:950px) {
+    #myoutmodal
+    {
+        width:50%;
+    }
+}
+@media (max-width:750px) {
+    #myoutmodal
+    {
+        width:60%;
+    }
+    .mylayout{
+        height:800px;
+    }
+
+    @media (max-width:450px) {
+        #myoutmodal
+        {
+            width:80%;
+        }
+    }
+    @media (max-width:300px) {
+        #myoutmodal
+        {
+            width:90%;
+        }
+    }
+    
+}

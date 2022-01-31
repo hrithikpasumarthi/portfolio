@@ -1,0 +1,82 @@
+<div id="fullpage">
+
+    <div id="layout">
+        <div id="navbar">
+        <div [routerLink]='["/signup"]'>
+               SIGNUP
+        </div>
+        <div [routerLink]='["/login"]'>
+                LOGIN      
+        </div>
+            </div>  
+        <div id="login">
+            <form [formGroup]='form'> 
+                <div>
+                    <label for="name" >
+                        Full Name
+                    </label>
+                    <br>
+                    <input formControlName="name" class="form-control" id="name" >
+                    <p *ngIf="form.controls.name.touched && form.controls.name.errors?.required" style="color: red;">
+                        *This field is required
+                    </p>
+                </div>
+    
+               <div>
+                <label for="id">
+                    Email ID
+                </label>
+                <br>
+                <input formControlName="id" class="form-control" id="id">
+                <p *ngIf="form.controls.id.touched && form.controls.id.errors?.required" style="color: red;">
+                    *This field is required
+                </p>
+                <p *ngIf="!form.controls.id.errors?.required && form.controls.id.errors?.pattern ">
+                    {{form.controls.id.errors?.pattern}}
+                </p>
+               </div>
+    
+               <div>
+                <label for="password">
+                    Password
+                </label>
+                <br>
+                <input formControlName="password" type='password'class="form-control" id="password">
+                <p *ngIf="form.controls.password.touched && form.controls.password.errors?.required" style="color: red;">
+                    *This field is required
+                </p>
+                <p *ngIf="!form.controls.password.errors?.required && form.controls.password.errors?.minlength" style="color: red;">
+                    *Requires min 8 charecters
+                </p>
+                <p *ngIf="!form.controls.password.errors?.required && form.controls.password.errors?.maxlength" style="color: red;" >
+                    *Max 12 charecters
+                </p>
+               </div>
+    
+               <div>
+                <label for="rp">
+                    Confirm Password
+                </label>
+                <br>
+                <input class="form-control" type='password' #rp id="rp" (keyup)="repassword=rp.value;" >
+                <p *ngIf="!form.value.password &&repassword" style="color: red;">
+                    *First enter password field
+                    </p>
+                <p *ngIf="!(!form.value.password &&repassword) && repassword && form.value.password!=repassword" style="color: red;">
+                    *Passwords shoud match
+                    </p>
+               </div>
+               <p *ngIf="errormessage" style="color: red;margin-bottom: 5px;">
+                {{errormessage}}
+            </p>
+                <input type="submit" (click)="adddata()" class="btn btn-outline-secondary" [disabled]="form.invalid || form.value.password!=repassword" style="margin-top: 10px;margin-left: 33%;margin-right: 35%;">
+            
+            </form>
+        </div>  
+    </div>
+    <div id="footer" > 
+        <span>&#9822;</span> ABOUT
+    </div>
+</div>
+ 
+

@@ -1,0 +1,122 @@
+<div id='back-img'>
+
+</div>
+<div class="mylayout">
+    <div id="myoutmodal">
+        <div class="mymodal" *ngIf="page==0">
+                <label >upload profile picture</label>
+               <br>
+                <input type='file' #image1 (change)="getBase(0)">
+                <br>
+                <br>
+                <label>
+                    upload cover pic
+                </label>
+                <br>
+                <input type='file' #image2 (change)="getBase(1)" >
+        </div>
+
+
+        <div class="mymodal" *ngIf="page==1">
+            <h4>
+               SKILL SET
+            </h4>
+            <div  *ngIf="skills.length" style="width: 90%; display: flex;flex-wrap: wrap; border:1px solid black ;border-radius: 5px;padding: 5px;margin:4px;">
+             <span *ngFor="let i of skills;let b=index"  style="margin:2px" >
+                 <span style="border: 2px solid #ccc;border-radius:3px;background-color: #ccc;margin:2px"># {{i}} <span style="cursor:pointer" (click)="skills.splice(b,1)">x</span></span>
+            </span>
+            </div>
+            <label>Enter skill</label>
+            <br>
+            <input type="text" style="width: 80%; margin-left:10px;" (keyup)="text1=skill.value" #skill>
+            <br>
+            <label>Rate your skill out of 5</label>
+            <br>
+            <input type="number" style="margin-left:10px" (keyup)="text2=rate.value" max=10 min=1 #rate>
+            <br>
+            <button type="button" [disabled]="!text1 || !text2" (click)="addskill(skill.value,rate.value);skill.value='';rate.value='';text1='';text2=''"  class="btn btn-primary btn-sm" style="margin-left: 45%;">
+                add
+            </button>
+        </div>
+
+
+        <div class="mymodal" *ngIf="page==2">
+            <h4>PROJECTS</h4>
+            <div  *ngIf="project.length" style="width: 80%; display: flex;flex-wrap: wrap; border:1px solid black ;border-radius: 5px;padding: 5px;margin:4px;">
+                <span *ngFor="let i of project ;let j=index;"  style="margin:2px" >
+                    <span style="border: 2px solid #ccc;border-radius:3px;background-color: #ccc;margin:2px"># {{i.name}} <span style="cursor:pointer" (click)="project.splice(j,1)">x</span></span>
+               </span>
+               </div>
+
+            <label>Enter Project Name</label>
+            <br>
+            <input type="text" style="width: 80%;margin-left:10px;" #projectid (keyup)="text3=projectid.value">
+            <br>
+            <label>Enter Project Description</label>
+            <br>
+            <textarea rows="8" cols="20" style="width: 80%;margin-left:10px" #projectdesc (keyup)="text4=projectdesc.value"></textarea>
+            <br>
+            <label>Enter Project Link</label>
+            <br>
+            <input type="text" style="width: 80%;margin-left:10px" #projectlink (keyup)="text5=projectlink.value">
+         
+            <button  [disabled]="!text3 || !text4 || !text5"style="margin-left: 45%;margin-top: 10px;" (click)="addproject();projectid.value='';projectdesc.value='';projectlink.value='';text3='';text4='';text5='';"  class="btn btn-primary btn-sm">add</button>
+        </div>
+        
+
+        <div class="mymodal" *ngIf="page==3">
+            <h4>
+                Personal Traits
+            </h4>
+            <div  *ngIf="traits.length" style="width: 90%; display: flex;flex-wrap: wrap; border:1px solid black ;border-radius: 5px;padding: 5px;margin:4px;">
+                <span *ngFor="let i of traits;let b=index"  style="margin:2px"  >
+                    <span style="border: 2px solid #ccc;border-radius:3px;background-color: #ccc;margin:2px"># {{i}} <span style="cursor:pointer" (click)="traits.splice(b,1)">x</span></span>
+               </span>
+               </div>
+            <label>
+                Enter personal traits
+            </label>
+            <br>
+            <input type="text" style="width:80%" #pt (keyup)="text6=pt.value;">
+            <br>
+            <br>
+            <button type="button"  class="btn btn-primary btn-sm" [disabled]="!text6 " (click)="addpersonaltraits();pt.value='';text6='';" style="margin-left: 45%;">
+                add
+            </button>
+        </div>
+
+        <div class="mymodal" *ngIf="page==4">
+            <h4>
+                Hobbies
+            </h4>
+            <div  *ngIf="hobbies.length" style="width: 90%; display: flex;flex-wrap: wrap; border:1px solid black ;border-radius: 5px;padding: 5px;margin:4px;">
+                <span *ngFor="let i of hobbies;let b=index"  style="margin:2px" >
+                    <span style="border: 2px solid #ccc;border-radius:3px;background-color: #ccc;margin:2px"># {{i}} <span style="cursor:pointer" (click)="hobbies.splice(b,1)">x</span></span>
+               </span>
+               </div>
+            <label>
+                Enter hobbies
+            </label>
+            <br>
+            <input type="text"  style="width:80%" #hb (keyup)="text7=hb.value;">
+            <br>
+            <br>
+            <button type="button"  class="btn btn-primary btn-sm" [disabled]="!text7 " (click)="addhobbies();hb.value='';text7='';" style="margin-left: 45%;">
+                add
+            </button>
+        </div>
+        <div class="myfooter" *ngIf="page<=3">
+        <button [disabled]='page<=0'style=" margin:5px" (click)="prev()" class="btn btn-primary btn-sm">prev</button>
+        <button [disabled]='page>=4' style="margin:5px ;float:right" (click)="next()" class="btn btn-primary btn-sm">save&proceed</button>
+        </div>
+
+        <div class="myfooter" *ngIf="page==4">
+            <button [disabled]='page<=0'style=" margin:5px" (click)="prev()" class="btn btn-primary btn-sm">prev</button>
+            <button  style="margin:5px ;float:right" (click)="adddata()" class="btn btn-primary btn-sm">generate</button>
+            </div>
+        </div>
+</div>
+    
+  
+
+
