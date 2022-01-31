@@ -1,5 +1,32 @@
 # Portfolio
 
+## INSTALlATION STEPS:
+
+<pre>
+npm i -g @angular/cli@12.2.6
+npm i -g json-server
+npm i
+</pre>
+
+## Server commands
+Terminal 1:
+<pre>
+ng serve --open
+</pre>
+Terminal 2:
+<pre>
+json-server --watch db.json
+</pre>
+
+## Database
+It runs on port 3000
+
+## Credentials
+http://localhost:3000/credentials
+
+## Portfolio data
+http://localhost:3000/data
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
 ## Development server
