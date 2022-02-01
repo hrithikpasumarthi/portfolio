@@ -19,9 +19,7 @@
         "bootstrap",
         "machine learning",
         "typescript",
-        "ai",
-        "angular",
-        "javascript"
+        "ai"
       ],
       "skillmap": {
         "angular": 5,
@@ -49,21 +47,12 @@
           "name": "TIC-TAC-TOE",
           "description": "nothing",
           "link": "#tollfare.com"
-        },
-        {
-          "name": "website",
-          "description": "OK",
-          "link": "#nothing.com"
         }
       ],
       "traits": [
-        "adaptive",
-        "adaptive",
         "adaptive"
       ],
       "hobbies": [
-        "reading",
-        "reading",
         "reading"
       ]
     }
