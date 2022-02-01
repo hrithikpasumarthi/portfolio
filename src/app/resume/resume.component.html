@@ -55,7 +55,7 @@
      
     <div class="down" *ngIf="ok">
 
-        <div class='down1'>
+        <div class='down1' *ngIf="data.traits.length">
             <h3 style='border-bottom:2px solid silver;'>PERSONAL TRAITS</h3>
             <ul >
                 <li *ngFor='let trait of data.traits '>
@@ -65,7 +65,7 @@
 
         </div>
 
-        <div class='down2'>
+        <div class='down2' *ngIf="data.hobbies.length">
             <h3 style='border-bottom:2px solid silver;'>HOBBIES</h3>
             <ul >
                 <li *ngFor='let hobbie of data.hobbies '>

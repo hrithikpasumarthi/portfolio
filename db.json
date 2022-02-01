@@ -19,7 +19,9 @@
         "bootstrap",
         "machine learning",
         "typescript",
-        "ai"
+        "ai",
+        "angular",
+        "javascript"
       ],
       "skillmap": {
         "angular": 5,
@@ -36,7 +38,7 @@
         {
           "name": "portfolio",
           "description": "nothing",
-          "link": "https://dinesh99639.github.io"
+          "link": "#"
         },
         {
           "name": "Tollfare using Image Processing",

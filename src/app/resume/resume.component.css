@@ -70,10 +70,11 @@ background-color: #aaa;
 #abaccord
 {
     width:20%;
-    height:100%;
+    max-height: 400px;
     margin-top:10px;
     margin-left: 5px;
     margin-bottom:5px;
+    overflow: auto;
 }
 
 #totalprojects
