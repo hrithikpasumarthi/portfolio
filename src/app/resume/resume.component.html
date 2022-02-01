@@ -33,7 +33,7 @@
             </p>   
             
         </div>
-        <div id='totalprojects'>
+        <div id='totalprojects' >
             <div *ngIf="ok" id='project'>
                 <div *ngFor="let project of data.project.slice(start,end);let i=index" class='mycard'>
                  <img src='../../assets/gitimage.png' class="cardimage">
@@ -42,7 +42,7 @@
                 </div>
              </div>
 
-             <div style="margin-top:-10%;;font-size: 5vw;" >
+             <div style="margin-top:-10%;;font-size: 5vw;" *ngIf='ok && data.project.length' >
                 <span  (click)='prev()' style="cursor:pointer;margin-left:4%;color:#ccc;"><b>&#8592;</b></span>
                <span (click)='next()' style="cursor:pointer;float: right;color:#ccc;margin-right: 4%;"><b>&#8594;</b></span>
              </div>

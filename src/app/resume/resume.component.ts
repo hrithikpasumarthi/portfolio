@@ -27,8 +27,10 @@ export class ResumeComponent implements OnInit {
 
   create()
   {
-    this.im1.nativeElement.src=this.data.profilepic;
-    this.im2.nativeElement.src=this.data.coverpic;
+    let profiledefault='../../assets/defaultprofilepic.png';
+    let coverdefault='../../assets/defaultcoverpic.jpg'
+    this.im1.nativeElement.src=this.data.profilepic||profiledefault;
+    this.im2.nativeElement.src=this.data.coverpic||coverdefault;
     console.log(this.data.project.length);
     for (let i=0;i<this.data.skills.length;i++)
     {
