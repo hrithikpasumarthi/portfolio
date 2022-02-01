@@ -35,27 +35,27 @@
       "project": [
         {
           "name": "portfolio",
-          "description": "nothing",
           "link": "#"
         },
         {
           "name": "Tollfare using Image Processing",
-          "description": "nothing",
           "link": "#tollfare.com"
         },
         {
           "name": "TIC-TAC-TOE",
-          "description": "nothing",
           "link": "#tollfare.com"
         }
       ],
       "traits": [
-        "adaptive"
+        "adaptive",
+        "creative",
+        "logical"
       ],
       "hobbies": [
-        "reading"
+        "reading",
+        "coin collection",
+        "watching movies"
       ]
     }
-   
   ]
 }

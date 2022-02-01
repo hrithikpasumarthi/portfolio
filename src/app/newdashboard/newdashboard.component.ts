@@ -129,7 +129,7 @@ export class NewdashboardComponent implements OnInit {
     {
     let a:any={};
     (a as any)["name"]=this.text3;
-    (a as any)["description"]=this.text4;
+    // (a as any)["description"]=this.text4;
     (a as any)["link"]=this.text5;
     this.project.push(a);
     console.log(this.project);

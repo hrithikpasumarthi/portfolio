@@ -53,15 +53,15 @@
             <br>
             <input type="text" style="width: 80%;margin-left:10px;" #projectid (keyup)="text3=projectid.value">
             <br>
-            <label>Enter Project Description</label>
+            <!-- <label>Enter Project Description</label>
             <br>
             <textarea rows="8" cols="20" style="width: 80%;margin-left:10px" #projectdesc (keyup)="text4=projectdesc.value"></textarea>
-            <br>
+            <br> -->
             <label>Enter Project Link</label>
             <br>
             <input type="text" style="width: 80%;margin-left:10px" #projectlink (keyup)="text5=projectlink.value">
          
-            <button  [disabled]="!text3 || !text4 || !text5"style="margin-left: 45%;margin-top: 10px;" (click)="addproject();projectid.value='';projectdesc.value='';projectlink.value='';text3='';text4='';text5='';"  class="btn btn-primary btn-sm">add</button>
+            <button  [disabled]="!text3 || !text5"style="margin-left: 45%;margin-top: 10px;" (click)="addproject();projectid.value='';projectlink.value='';text3='';text5='';"  class="btn btn-primary btn-sm">add</button>
         </div>
         
 
